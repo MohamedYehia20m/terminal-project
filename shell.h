@@ -5,11 +5,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 
 /*previous functions*/
 
 
 /*new functions*/
-char* _getline();
+char* _getline(void);
+char** split_string(char* str);
 
 #endif
