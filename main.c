@@ -7,9 +7,10 @@ int main(void)
 
 	for (unsigned long int i = 0; (strings[i] != NULL); i++)
 	{
-		printf("%s\n", strings[i]);
+		_puts(strings[i]);
+		_putchar('\n');
 	}
-	printf("\n");
+	_putchar('\n');
 	free(strings);
 	return (0);
 }
