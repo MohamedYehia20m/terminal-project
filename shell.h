@@ -8,7 +8,7 @@
 #include <string.h>
 
 /*previous functions*/
-
+void _puts(char *s);
 
 /*new functions*/
 char* _getline(void);
