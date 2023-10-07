@@ -12,7 +12,7 @@
 #define BUF_FLUSH -1
 
 /*previous functions*/
-
+void _puts(char *s);
 
 /*new functions*/
 char* _getline(void);
