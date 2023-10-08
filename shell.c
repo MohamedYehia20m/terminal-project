@@ -9,16 +9,26 @@
  */
 int main(int ac, char **av)
 {
-	char *buffer;
+	char *buffer = NULL;
+	int status;
 	char **argv;
 	pid_t child_pid;
 
-	_puts("$ ");
-	buffer = _getline();
-	argv = split_string(buffer);
-	child_pid = fork();
-	if (child_pid == 0)
-		if (execve(argv[0], argv, NULL) == -1)
-			perror("execve failed");
-	return (0);
+	while (1)
+	{
+		_puts("#cisfunc$ ");
+		buffer = _getline();
+		argv = split_string(buffer);
+			child_pid = fork();
+		if (child_pid == 0)
+		{
+			if (execve(argv[0], argv, NULL) == -1)
+				perror("Error");
+		}
+		else
+		{
+			wait(&status);
+		}
+		free(argv);
+	}
 }
