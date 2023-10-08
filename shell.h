@@ -14,10 +14,12 @@
 
 /*previous functions*/
 void _puts(char *s);
+int _strcmp(char *s1, char *s2);
 
 /*new functions*/
 char* _getline(void);
 char** split_string(char* str);
 int _putchar(char c);
+void check_command(char *command);
 
 #endif
