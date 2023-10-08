@@ -14,12 +14,12 @@ char **split_string(char *str)
 {
 	int num_words = 0;
 	char **words = malloc(sizeof(char *) * 1024);
-	char *token = strtok(str, "\t\n");
+	char *token = strtok(str, " \t\n");
 
 	while (token)
 	{
 		words[num_words] = token;
-		token = strtok(NULL, "\t\n");
+		token = strtok(NULL, " \t\n");
 		num_words++;
 	}
 	words[num_words] = NULL;
