@@ -1,5 +1,5 @@
 #include "shell.h"
-
+/*to be tested and reviewed */
 struct Node* buildPathLinkedList() {
     char* path = getenv("PATH");
     char* token = strtok(path, ":");
