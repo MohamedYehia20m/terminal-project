@@ -4,7 +4,7 @@ int main(void)
 {
 	/*
 	char str[] = "This is a test string.";
-	char **strings = split_string(str);
+	char **strings = split_string(str, " \t\n");
 
 	for (unsigned long int i = 0; (strings[i] != NULL); i++)
 	{

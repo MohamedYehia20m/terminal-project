@@ -18,7 +18,7 @@ int main(int ac, char **av)
 	{
 		_puts("#cisfunc$ ");
 		buffer = _getline();
-		argv = split_string(buffer);
+		argv = split_string(buffer," \t\n");
 			child_pid = fork();
 		if (child_pid == 0)
 		{

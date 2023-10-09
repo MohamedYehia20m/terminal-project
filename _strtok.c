@@ -10,16 +10,16 @@
  * Return: array of words.
  */
 
-char **split_string(char *str)
+char **split_string(char *str , const char *delim)
 {
 	int num_words = 0;
 	char **words = malloc(sizeof(char *) * 1024);
-	char *token = strtok(str, " \t\n");
+	char *token = strtok(str, delim);
 
 	while (token)
 	{
 		words[num_words] = token;
-		token = strtok(NULL, " \t\n");
+		token = strtok(NULL, delim);
 		num_words++;
 	}
 	words[num_words] = NULL;

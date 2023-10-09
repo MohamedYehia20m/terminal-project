@@ -19,7 +19,7 @@ int main(void)
 		i = 1;
 		_puts("CISFUN$ ");
 		buffer = _getline();
-		argv = split_string(buffer);
+		argv = split_string(buffer , " \t\n");
 		if (_strcmp(argv[0], "_which") == 0)
 		{
 			while (argv[i])
