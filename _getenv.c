@@ -1,6 +1,6 @@
 #include "shell.h"
 
-char *_getenv(const char *name)
+char *_getenv(char *name)
 {
 	extern char **environ;
 	int i;
@@ -9,20 +9,9 @@ char *_getenv(const char *name)
 	i = 0;
 	while (environ[i])
 	{
-		token = strtok(environ[i], "="); //split_string()
-		if (strcmp(token, name) == 0) //_strcmp()
-		{
+		token = strtok(environ[i++], "="); 
+		if (_strcmp(token, name) == 0) 
 			return (strtok(NULL, "="));
-		}
-		i++;
 	}
 	return (NULL);
-}
-
-void main(void)
-{
-	char *homevalue = _getenv("HOME");
-
-	printf("%s\n", homevalue);
-	//_puts(homevalue);
 }
