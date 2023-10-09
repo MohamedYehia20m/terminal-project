@@ -12,6 +12,12 @@
 #define WRITE_BUF_SIZE 1024
 #define BUF_FLUSH -1
 
+/*structures*/
+struct Node {
+	char* data;
+	struct Node* next;
+};
+
 /*previous functions*/
 void _puts(char *s);
 int _strcmp(char *s1, char *s2);
@@ -22,5 +28,6 @@ char** split_string(char* str, const char *delim);
 int _putchar(char c);
 void check_command(char *command);
 char *_getenv(char *name);
+void printPathDirectories(void);
 
 #endif
