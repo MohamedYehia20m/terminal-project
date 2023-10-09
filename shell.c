@@ -16,14 +16,29 @@ int main(int ac, char **av)
 
 	while (1)
 	{
-		_puts("#cisfunc$ ");
+		/*_puts(_getenv("USER"));
+		_putchar('@');
+		_puts(_getenv("NAME"));
+		_putchar(':');
+		_puts(_getenv("PWD"));*/
+		_puts("$ ");
 		buffer = _getline();
+		buffer = delete_comments(buffer);
+		/*
+		if (check_spaces_input(buffer) == 1)
+		{
+			_putchar('\n');
+			continue;
+		}
+		*/
 		argv = split_string(buffer," \t\n");
-			child_pid = fork();
+		/* TODO */
+		argv[0] = check_command(argv[0]);
+		child_pid = fork();
 		if (child_pid == 0)
 		{
 			if (execve(argv[0], argv, NULL) == -1)
-				perror("Error");
+				perror(argv[0]);
 		}
 		else
 		{
