@@ -35,5 +35,6 @@ char *_getenv(char *name);
 void printPathDirectories(void);
 int check_spaces_input(char *buffer);
 char *check_command(char *command);
+char *delete_comments(char *command);
 
 #endif
