@@ -2,11 +2,13 @@
 
 void printPathDirectories(void) {
     char* path = _getenv("PATH");
-    char* token = strtok(path, ":");
-    
-    while (token != NULL) {
-        printf("%s\n", token);
-        token = strtok(NULL, ":");
+    char** directories = split_string(path, ":");
+    int i = 0;
+
+    while (directories[i]) 
+    {
+	_puts(directories[i++]);
+        _putchar('\n');	
     }
 }
 
