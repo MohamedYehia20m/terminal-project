@@ -9,13 +9,15 @@
  */
 int main(int ac, char **av)
 {
-	char *buffer = NULL;
+	char *buffer;
 	int status;
 	char **argv;
 	pid_t child_pid;
 
 	while (1)
 	{
+		buffer = NULL;
+		argv = NULL;
 		/*_puts(_getenv("USER"));
 		_putchar('@');
 		_puts(_getenv("NAME"));
@@ -31,12 +33,13 @@ int main(int ac, char **av)
 		if (check_spaces_input(buffer)) //why cant i enter this f**king function
 		{
 			//_putchar('\n');
-			//exit(127);
+			//exit(0);
 			//printf("%s\n","empty spaces!");
 			continue;
 		}
 		
 		argv = split_string(buffer," \t\n");
+		printf("argv[0] : %s\n" , argv[0]);
 		/* TODO */
 		argv[0] = check_command(argv[0]);
 		child_pid = fork();
