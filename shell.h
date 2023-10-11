@@ -25,6 +25,8 @@ int _strcmp(char *s1, char *s2);
 int _strlen(char *s);
 char *_strdup(char *str);
 char *str_concat(char *s1, char *s2);
+char *_strcpy(char *dest, char *src);
+char *_strcat(char *dest, char *src);
 
 /*new functions*/
 char* _getline(void);
@@ -36,6 +38,8 @@ void printPathDirectories(void);
 int check_spaces_input(char *buffer);
 char *check_command(char *command);
 char *delete_comments(char *command);
-char *removeSpaces(char *str);
-
+/*char *removeSpaces(char *str);*/
+char *remove_spaces(char *bf);
+char *handle_path(char **argv, char *bf);
+void execute_command(char **argv);
 #endif
