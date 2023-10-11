@@ -23,14 +23,19 @@ int main(int ac, char **av)
 		_puts(_getenv("PWD"));*/
 		_puts("$ ");
 		buffer = _getline();
-		buffer = delete_comments(buffer);
-		/*
-		if (check_spaces_input(buffer) == 1)
+		//buffer = delete_comments(buffer);
+		//buffer = removeSpaces(buffer);
+		printf("%s","start");
+		printf("%s",buffer);
+		printf("%s\n","end");
+		if (check_spaces_input(buffer)) //why cant i enter this f**king function
 		{
-			_putchar('\n');
+			//_putchar('\n');
+			//exit(127);
+			printf("%s\n","empty spaces!");
 			continue;
 		}
-		*/
+		
 		argv = split_string(buffer," \t\n");
 		/* TODO */
 		argv[0] = check_command(argv[0]);
@@ -38,12 +43,18 @@ int main(int ac, char **av)
 		if (child_pid == 0)
 		{
 			if (execve(argv[0], argv, NULL) == -1)
+			{
+				printf("%s\n","execve false");
 				perror(argv[0]);
+			}
+			printf("%s\n","child_pid == 0");
 		}
 		else
 		{
 			wait(&status);
+			printf("%s\n","still waiting");
 		}
+		printf("%s\n","before free(argv)");
 		free(argv);
 	}
 }

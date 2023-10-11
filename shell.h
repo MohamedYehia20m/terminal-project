@@ -36,5 +36,6 @@ void printPathDirectories(void);
 int check_spaces_input(char *buffer);
 char *check_command(char *command);
 char *delete_comments(char *command);
+char *removeSpaces(char *str);
 
 #endif
