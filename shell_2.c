@@ -44,6 +44,7 @@ int main(int ac, char **av)
 		}
 		*/
 		argv = split_string(buffer, " \t\n");
+		check_builtin(argv);
 		handle_path(argv, buffer);
 		// runcmd(argv, av, envp);
 		execute_command(argv);
