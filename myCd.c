@@ -8,7 +8,8 @@
  */
 void myCd(char **argv)
 {
-	char *dest, *cur, buffer[1024];
+	char *dest;
+	char *cur, buffer[WRITE_BUF_SIZE];
 
 	if (argv[2] != NULL)
 	{
@@ -21,11 +22,11 @@ void myCd(char **argv)
 		dest = _getenv("OLDPWD");
 	else
 		dest = argv[1];
-	cur = getcwd(buffer, 1024);
+	cur = getcwd(buffer, WRITE_BUF_SIZE);
 	if (chdir(dest) == 0)
 	{
 		setenv("OLDPWD", cur, 1);
-		cur = getcwd(buffer, 1024);
+		cur = getcwd(buffer, WRITE_BUF_SIZE);
 		setenv("PWD", cur, 1);
 	}
 	else

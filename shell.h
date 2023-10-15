@@ -10,7 +10,7 @@
 #include <stddef.h>
 
 /*macros*/
-#define WRITE_BUF_SIZE 1024
+#define WRITE_BUF_SIZE 5000
 #define BUF_FLUSH -1
 
 /*structures*/
