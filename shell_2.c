@@ -21,11 +21,12 @@ int main(int ac, char **av)
 		buflen = _strlen(buffer);
 		if (buffer[buflen - 1] == '\n')
 			buffer[buflen - 1] = '\0';
-		buffer = remove_spaces(buffer); // trim(cmd);
+		buffer = remove_spaces(buffer);
 		if (_strlen(buffer) == 0)
 			continue;
 		argv = split_string(buffer, " \t\n");
-		check_builtin(argv);
+		if (check_builtin(argv))
+			continue;
 		handle_path(argv, buffer);
 		execute_command(argv);
 	}
