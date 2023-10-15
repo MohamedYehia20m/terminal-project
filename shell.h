@@ -56,5 +56,5 @@ char *handle_path(char **argv, char *bf);
 void execute_command(char **argv);
 void myExit(char **argv);
 void check_builtin(char **argv);
-
+void myEnv(char **argv);
 #endif
