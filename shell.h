@@ -10,7 +10,7 @@
 #include <stddef.h>
 
 /*macros*/
-#define WRITE_BUF_SIZE 5000
+#define WRITE_BUF_SIZE 1024
 #define BUF_FLUSH -1
 
 /*structures*/
@@ -39,6 +39,7 @@ char *str_concat(char *s1, char *s2);
 char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
 int _atoi(char *s);
+char *_strchr(char *s, char c);
 
 /*new functions*/
 char* _getline(void);
@@ -58,5 +59,6 @@ void myExit(char **argv);
 int check_builtin(char **argv);
 void myEnv(char **argv);
 void myCd(char **argv);
+char *_strtok(char *str, char *delim);
 
 #endif
