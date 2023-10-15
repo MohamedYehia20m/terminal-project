@@ -19,6 +19,17 @@ struct Node {
 	struct Node* next;
 };
 
+/**
+ * struct builtinFunctionsStruct - holds the builtin string and related function
+ * @cmd: command
+ * @func: function
+ */
+typedef struct builtinFunctionsStruct
+{
+	char *cmd;
+	void (*func)(char **argv);
+} builtin_t;
+
 /*previous functions*/
 void _puts(char *s);
 int _strcmp(char *s1, char *s2);
@@ -27,6 +38,7 @@ char *_strdup(char *str);
 char *str_concat(char *s1, char *s2);
 char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
+int _atoi(char *s);
 
 /*new functions*/
 char* _getline(void);
@@ -42,4 +54,7 @@ char *delete_comments(char *command);
 char *remove_spaces(char *bf);
 char *handle_path(char **argv, char *bf);
 void execute_command(char **argv);
+void myExit(char **argv);
+void check_builtin(char **argv);
+
 #endif
