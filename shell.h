@@ -27,7 +27,7 @@ struct Node {
 typedef struct builtinFunctionsStruct
 {
 	char *cmd;
-	int (*func)(char **argv);
+	void (*func)(char **argv);
 } builtin_t;
 
 /*previous functions*/
@@ -57,4 +57,6 @@ void execute_command(char **argv);
 void myExit(char **argv);
 int check_builtin(char **argv);
 void myEnv(char **argv);
+void myCd(char **argv);
+
 #endif

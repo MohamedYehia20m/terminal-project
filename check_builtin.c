@@ -13,6 +13,7 @@ int check_builtin(char **argv)
 	builtin_t builtinArr[] = {
 		{"exit", myExit},
 		{"env", myEnv},
+		{"cd", myCd},
 		{NULL, NULL}
 	};
 
