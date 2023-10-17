@@ -20,11 +20,6 @@ void execute_command(char **argv)
 	{
 		if (execve(argv[0], argv, NULL) == -1)
 		{
-			//write(STDOUT_FILENO, arv[0], _strlen(arv[0]));
-			//write(STDOUT_FILENO, ": No such file or directory",
-			//_strlen(": No such file or directory"));
-			//write(STDOUT_FILENO, "\n", 1);
-			/*geterror(c -> cnt, arv, cmd);*/
 			_puts(argv[0]);
 			_puts(": No such file or directory\n");
 		}

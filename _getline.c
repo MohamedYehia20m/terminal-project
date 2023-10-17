@@ -19,7 +19,6 @@ char *_getline(void)
 	if (bytes_read == -1)
 	{
 		free(buffer);
-		//_putchar('\n');
 		exit(0);
 	}
 	return (buffer);

@@ -6,14 +6,13 @@
  *
  * Return: buffer without initial spaces
  */
-char *remove_spaces(char *bf) // "    ls\n"
+char *remove_spaces(char *bf)
 {
 	char *tmp;
 	int i = 0;
 
 	while (bf[i] == ' ')
 		i++;
-	// len = _strlen(bf) - i;
 	tmp = malloc(_strlen(bf) - i + 1);
 	if (!tmp)
 	{
