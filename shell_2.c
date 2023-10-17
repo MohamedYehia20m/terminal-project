@@ -13,6 +13,11 @@ int main(int ac, char **av)
 	int buflen = 0;
 	char *buffer = NULL, **argv;
 
+	if (ac == 2)
+	{
+		execute_from_file(av[1]);
+		return (0);
+	}
 	while (1)
 	{
 		if (interactive && isatty(STDIN_FILENO))

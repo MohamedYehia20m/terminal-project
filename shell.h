@@ -8,6 +8,7 @@
 #include <string.h>
 #include <sys/wait.h>
 #include <stddef.h>
+#include <fcntl.h>
 
 /*macros*/
 #define WRITE_BUF_SIZE 1024
@@ -60,5 +61,6 @@ int check_builtin(char **argv);
 void myEnv(char **argv);
 void myCd(char **argv);
 char *_strtok(char *str, char *delim);
+void execute_from_file(char *filename);
 
 #endif
