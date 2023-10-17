@@ -21,11 +21,10 @@ void execute_from_file(char *filename)
 	buffer = malloc(WRITE_BUF_SIZE);
 	if (buffer == NULL)
 		exit(0);
-	while(1)
+	while (1)
 	{
 		i = 0;
-		do
-		{
+		do {
 			readLetters = read(fileDescriptor, &c, 1);
 			if (readLetters == 0)
 				break;
