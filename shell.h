@@ -15,6 +15,9 @@
 #define BUF_FLUSH -1
 #define MAX_WORDS 1024
 
+/*externs*/
+extern char **environ;
+
 /*structures*/
 struct Node {
 	char* data;
