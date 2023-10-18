@@ -20,7 +20,10 @@ void execute_from_file(char *filename)
 		exit(0);
 	buffer = malloc(WRITE_BUF_SIZE);
 	if (buffer == NULL)
+	{
+		close(fileDescriptor);
 		exit(0);
+	}
 	while (1)
 	{
 		i = 0;
