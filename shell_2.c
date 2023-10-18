@@ -11,7 +11,7 @@ int main(int ac, __attribute__((unused))char **av)
 {
 	int interactive = (ac == 1 && isatty(STDIN_FILENO));
 	int buflen = 0;
-	char *buffer = NULL, **argv = NULL;
+	char *buffer = NULL, __attribute__((unused))**argv = NULL;
 
 	/*
 	if (ac == 2)
@@ -33,11 +33,10 @@ int main(int ac, __attribute__((unused))char **av)
 		if (_strlen(buffer) == 0)
 			continue;
 		/*argv = split_string(buffer, " \t\n");*/
-		*argv = buffer;
-		if (check_builtin(argv))
-			continue;
+		/*if (check_builtin(argv))
+			continue;*/
 		/*handle_path(argv, buffer);*/
-		execute_command(argv);
+		execute_command(/*argv*/&buffer);
 	}
 	free(buffer);
 	/*while (argv)
