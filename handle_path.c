@@ -7,7 +7,8 @@
  *
  * Return: full path for the command
  */
-char *handle_path(char **argv, char *bf)
+
+/*char *handle_path(char **argv, char *bf)
 {
 	char *path = NULL;
 
@@ -23,4 +24,33 @@ char *handle_path(char **argv, char *bf)
 	}
 	free(path);
 	return (bf);
+}*/
+
+char *handle_path(char **argv, char *bf)
+{
+	static char path[100];  /* Assuming a maximum path length of 100 characters */
+	char *result = NULL;
+
+	if (bf[0] != '/' && bf[0] != '.')
+	{	
+		_strcpy(path, "/bin/");	
+		result = _strcat(path, bf);				
+		argv[0] = result;					
+		return (argv[0]);
+	}
+	return(bf);
 }
+
+/*
+int main()
+{
+    char* argv[1];
+        char bf[] = "program";
+	    
+	    char* result = handle_path(argv, bf);
+	        
+	        printf("Result: %s\n", result);
+		    
+		    return 0;
+}
+*/

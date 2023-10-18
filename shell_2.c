@@ -33,7 +33,7 @@ int main(int ac, char **av)
 		argv = split_string(buffer, " \t\n");
 		if (check_builtin(argv))
 			continue;
-		/*handle_path(argv, buffer);*/
+		handle_path(argv, buffer);
 		execute_command(argv);
 	}
 	free(buffer);
