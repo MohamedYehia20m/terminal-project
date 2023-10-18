@@ -53,7 +53,7 @@ int check_spaces_input(char *buffer);
 char *check_command(char *command);
 char *delete_comments(char *command);
 /*char *removeSpaces(char *str);*/
-char *remove_spaces(char *bf);
+void remove_spaces(char *bf);
 char *handle_path(char **argv, char *bf);
 void execute_command(char **argv);
 void myExit(char **argv);

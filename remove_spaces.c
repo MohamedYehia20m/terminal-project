@@ -4,29 +4,31 @@
  * remove_spaces - remove initial pading
  * @bf: pointer to the buffer
  *
- * Return: buffer without initial spaces
+ * Return: void
  */
-char *remove_spaces(char *bf)
+void remove_spaces(char *bf)
 {
-	char *tmp;
-	int i = 0;
+	int i = 0, j, len = _strlen(bf), shift = 0;
 
+	/* Remove leading spaces */
 	while (bf[i] == ' ')
 		i++;
-	tmp = malloc(_strlen(bf) - i + 1);
-	if (!tmp)
+
+	/* Remove trailing spaces */
+	j = len - 1;
+	while (j >= 0 && bf[j] == ' ')
 	{
-		perror("Allocation Failed\n");
-		return (NULL);
+		bf[j] = '\0';
+		j--;
 	}
-	/*
-	_strncpy(cpcmd, bf + i, len);
-	cpcmd[len] = '\0';
-	_strcpy(fb, cpcmd);
-	free(cpcmd);
-	*/
-	tmp = _strdup(bf + i);
-	free(bf);
-	bf = tmp;
-	return (bf);
+
+	/* Shift remaining characters to the left */
+	shift = 0;
+	while (i <= j)
+	{
+		bf[shift] = bf[i];
+		i++;
+		shift++;
+	}
+	bf[shift] = '\0';  /* Null-terminate the modified string */
 }

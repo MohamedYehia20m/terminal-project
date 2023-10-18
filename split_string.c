@@ -19,9 +19,11 @@ char **split_string(char *str , const char *delim)
         while (token)
         {
                 words[num_words] = token;
+		token = NULL;
                 token = strtok(NULL, delim);
                 num_words++;
         }
         words[num_words] = NULL;
+	token = NULL;
         return (words);
 }

@@ -9,7 +9,7 @@
  */
 char *handle_path(char **argv, char *bf)
 {
-	char *path;
+	char *path = NULL;
 
 	path = malloc(_strlen("/bin/") + _strlen(bf) + 1);
 	if (!path)
@@ -18,6 +18,7 @@ char *handle_path(char **argv, char *bf)
 	if (bf[0] != '/' && bf[0] != '.')
 	{
 		argv[0] = _strcat(path, bf);
+		path = NULL;
 		return (argv[0]);
 	}
 	free(path);

@@ -26,7 +26,7 @@ int main(int ac, char **av)
 		buflen = _strlen(buffer);
 		if (buffer[buflen - 1] == '\n')
 			buffer[buflen - 1] = '\0';
-		buffer = remove_spaces(buffer);
+		remove_spaces(buffer);
 		buffer = delete_comments(buffer);
 		if (_strlen(buffer) == 0)
 			continue;

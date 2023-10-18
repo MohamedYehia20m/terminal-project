@@ -10,7 +10,7 @@ void execute_from_file(char *filename)
 {
 	int fileDescriptor, i = 0;
 	size_t readLetters = 0;
-	char *buffer, **argv;
+	char *buffer = NULL, **argv = NULL;
 	char c;
 
 	if (filename == NULL)
@@ -33,7 +33,7 @@ void execute_from_file(char *filename)
 		if (readLetters == 0)
 			break;
 		buffer[i] = '\0';
-		buffer = remove_spaces(buffer);
+		remove_spaces(buffer);
 		buffer = delete_comments(buffer);
 		if (_strlen(buffer) == 0)
 			continue;
