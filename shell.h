@@ -61,7 +61,7 @@ void myExit(char **argv);
 int check_builtin(char **argv);
 void myEnv(char **argv);
 void myCd(char **argv);
-char *_strtok(char *str, char *delim);
+/*char *_strtok(char *str, char *delim);*/
 void execute_from_file(char *filename);
 
 #endif
