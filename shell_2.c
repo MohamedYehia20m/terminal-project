@@ -7,17 +7,19 @@
  *
  * Return: Always 0 (Success)
  */
-int main(int ac, char **av)
+int main(int ac, __attribute__((unused))char **av)
 {
 	int interactive = (ac == 1 && isatty(STDIN_FILENO));
 	int buflen = 0;
 	char *buffer = NULL, **argv;
 
+	/*
 	if (ac == 2)
 	{
 		execute_from_file(av[1]);
 		return (0);
 	}
+	*/
 	while (1)
 	{
 		if (interactive && isatty(STDIN_FILENO))
@@ -26,10 +28,10 @@ int main(int ac, char **av)
 		buflen = _strlen(buffer);
 		if (buffer[buflen - 1] == '\n')
 			buffer[buflen - 1] = '\0';
-		remove_spaces(buffer);
-		buffer = delete_comments(buffer);
-		if (_strlen(buffer) == 0)
-			continue;
+		/*remove_spaces(buffer);*/
+		/*buffer = delete_comments(buffer);*/
+		/*if (_strlen(buffer) == 0)
+			continue;*/
 		argv = split_string(buffer, " \t\n");
 		if (check_builtin(argv))
 			continue;
