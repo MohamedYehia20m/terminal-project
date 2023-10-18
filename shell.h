@@ -19,13 +19,21 @@
 extern char **environ;
 
 /*structures*/
-struct Node {
-	char* data;
-	struct Node* next;
+/**
+ * struct Node - represents a node in a linkedlist
+ * function
+ * @data: the content of node
+ * @next: pointer to the next node
+ */
+struct Node
+{
+	char *data;
+	struct Node *next;
 };
 
 /**
- * struct builtinFunctionsStruct - holds the builtin string and related function
+ * struct builtinFunctionsStruct - holds the builtin string and related
+ * function
  * @cmd: command
  * @func: function
  */
@@ -47,8 +55,8 @@ int _atoi(char *s);
 char *_strchr(char *s, char c);
 
 /*new functions*/
-char* _getline(void);
-char** split_string(char* str, const char *delim);
+char *_getline(void);
+char **split_string(char *str, const char *delim);
 int _putchar(char c);
 /*void check_command(char *command);*/
 char *_getenv(char *name);
