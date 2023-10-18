@@ -1,14 +1,16 @@
+#include "shell.h"
+
 /**
- * strlen - a function that returns the length of a string.
+ * _strlen - a function that returns the length of a string.
  * @s: to char pointer
- *  
+ *
  * Description: a function that returns the length of a string
  * by looping through its chracters till the end
  *
  * Return: return counter of type int
  */
 
- int _strlen(char *s)
+int _strlen(char *s)
 {
 	int i = 0;
 
