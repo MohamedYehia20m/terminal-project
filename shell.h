@@ -13,6 +13,7 @@
 /*macros*/
 #define WRITE_BUF_SIZE 1024
 #define BUF_FLUSH -1
+#define MAX_WORDS 1024
 
 /*structures*/
 struct Node {

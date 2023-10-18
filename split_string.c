@@ -12,11 +12,12 @@
 
 char **split_string(char *str , const char *delim)
 {
+	static char* words[MAX_WORDS];
         int num_words = 0;
-        char **words = malloc(sizeof(char *) * 1024);
+        /*char **words = malloc(sizeof(char *) * 1024);*/
         char *token = strtok(str, delim);
 
-        while (token)
+        while (token && (num_words < MAX_WORDS - 1))
         {
                 words[num_words] = token;
 		token = NULL;
