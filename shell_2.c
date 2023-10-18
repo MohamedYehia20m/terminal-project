@@ -30,9 +30,10 @@ int main(int ac, __attribute__((unused))char **av)
 			buffer[buflen - 1] = '\0';
 		/*remove_spaces(buffer);*/
 		/*buffer = delete_comments(buffer);*/
-		/*if (_strlen(buffer) == 0)
-			continue;*/
-		argv = split_string(buffer, " \t\n");
+		if (_strlen(buffer) == 0)
+			continue;
+		/*argv = split_string(buffer, " \t\n");*/
+		argv = buffer;
 		if (check_builtin(argv))
 			continue;
 		/*handle_path(argv, buffer);*/
