@@ -23,11 +23,17 @@ int main(int ac, char **av)
 		if (interactive && isatty(STDIN_FILENO))
 			_puts("$ ");
 		buffer = _getline();
+		/*bytes = getline(&buffer, &buflen, stdin);
+		if (bytes == -1)
+		{
+			free(buffer);
+			continue;
+		}*/
 		buflen = _strlen(buffer);
 		if (buffer[buflen - 1] == '\n')
 			buffer[buflen - 1] = '\0';
 		remove_spaces(buffer);
-		buffer = delete_comments(buffer);
+		delete_comments(buffer);
 		if (_strlen(buffer) == 0)
 			continue;
 		argv = split_string(buffer, " \t\n");
@@ -35,7 +41,12 @@ int main(int ac, char **av)
 			continue;
 		handle_path(argv, buffer);
 		execute_command(argv);
+
+		free(buffer);
+		buffer = NULL;
+		/*free(argv);
+		argv = NULL;*/
 	}
-	free(buffer);
+	/*free(buffer);*/
 	return (0);
 }
