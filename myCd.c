@@ -29,6 +29,8 @@ void myCd(char **argv)
 		cur = getcwd(buffer, WRITE_BUF_SIZE);
 		setenv("PWD", cur, 1);
 	}
+	/*
 	else
 		perror("can't cd to this path");
+	*/
 }
