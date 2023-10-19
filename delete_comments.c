@@ -12,10 +12,10 @@ char *delete_comments(char *command)
 
 	while (command[i] != '\0')
 	{
-		if (command[i] == '"')
+		if (command[i] == '\"')
 		{
 			i++;
-			while (command[i] != '"' && command[i] != '\0')
+			while (command[i] != '\"' && command[i] != '\0')
 				i++;
 		}
 		else if (command[i] == '#')
