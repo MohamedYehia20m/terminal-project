@@ -10,14 +10,13 @@ void execute_from_file(char *filename)
 {
 	int fileDescriptor, i = 0;
 	size_t readLetters = 0;
-	char *buffer = NULL, **argv = NULL, c;
+	char buffer[WRITE_BUF_SIZE], **argv = NULL, c;
 
 	if (filename == NULL)
 		exit(0);
 	fileDescriptor = open(filename, O_RDONLY);
 	if (fileDescriptor == -1)
 		exit(127);
-	buffer = malloc(WRITE_BUF_SIZE);
 	if (buffer == NULL)
 		exit(0);
 	while (1)
@@ -33,7 +32,7 @@ void execute_from_file(char *filename)
 			break;
 		buffer[i] = '\0';
 		remove_spaces(buffer);
-		buffer = delete_comments(buffer);
+		delete_comments(buffer);
 		if (_strlen(buffer) == 0)
 			continue;
 		argv = split_string(buffer, " \t\n");
@@ -42,7 +41,6 @@ void execute_from_file(char *filename)
 		handle_path(argv, buffer);
 		execute_command(argv);
 	}
-	free(buffer);
 	close(fileDescriptor);
 	if (fileDescriptor == -1)
 		exit(0);
