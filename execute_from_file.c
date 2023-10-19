@@ -16,10 +16,7 @@ void execute_from_file(char *filename)
 		exit(0);
 	fileDescriptor = open(filename, O_RDONLY);
 	if (fileDescriptor == -1)
-	{
-		perror(filename);
 		exit(127);
-	}
 	buffer = malloc(WRITE_BUF_SIZE);
 	if (buffer == NULL)
 		exit(0);
@@ -37,7 +34,7 @@ void execute_from_file(char *filename)
 		buffer[i] = '\0';
 		remove_spaces(buffer);
 		buffer = delete_comments(buffer);
-		if (_strlen(buffer) == 0 || _strlen(buffer) == 1)
+		if (_strlen(buffer) == 0)
 			continue;
 		argv = split_string(buffer, " \t\n");
 		if (check_builtin(argv))
